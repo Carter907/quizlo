@@ -1,0 +1,11 @@
+<div class="p-4">
+    <app-navbar/>
+    <div>
+
+        <app-deck-list-view [decks]="decks" (new_selected_deck)="select_deck($event)" [selected_deck]="selected_deck"/>
+    </div>
+    <div>
+
+        <app-card-list-view [cards]="cards"/>
+    </div>
+</div>

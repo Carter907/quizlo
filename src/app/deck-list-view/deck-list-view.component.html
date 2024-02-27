@@ -1,0 +1,6 @@
+<ul class="flex flex-col w-1/2 gap-3">
+    @for (deck of decks; track deck.id) {
+        <app-deck-view [selected]="deck == selected_deck" (click)="deck_clicked(deck)" [deck]="deck"/>
+
+    }
+</ul>
