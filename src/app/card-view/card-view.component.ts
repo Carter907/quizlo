@@ -10,7 +10,12 @@ import {Card} from "../card";
 })
 export class CardViewComponent {
 
+  showBack = false;
   @Input()
   card: Card = { id: -1, front: '', back: '', deck_id: -1 }
 
+
+  clickCard() {
+    this.showBack = ! this.showBack;
+  }
 }

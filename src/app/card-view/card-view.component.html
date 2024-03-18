@@ -1,8 +1,7 @@
-<div class="w-fit p-2 border-2 shadow-md">
-    <div class="border rounded bg-neutral-100">
+<div class="w-1/2 rounded h-20 p-2 border-2 shadow-md select-none" (click)="clickCard()">
+    @if (!showBack) {
         {{ card.front }}
-    </div>
-    <div class="border rounded">
+    } @else {
         {{ card.back }}
-    </div>
+    }
 </div>

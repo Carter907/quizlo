@@ -10,6 +10,16 @@ pub async fn fetch_cards(deck: Deck) -> Result<Vec<Card>, sqlx::Error> {
     Ok(rows)
 }
 
+pub async fn insert_deck(deck: Deck) -> Result<(), sqlx::Error> {
+    let pool = sqlx::sqlite::SqlitePool::connect("sqlite:data\\flashcard-app-data.db").await?;
+    sqlx::query("INSERT INTO deck (id, name) VALUES ($1, $2)")
+        .bind(deck.id)
+        .bind(deck.name)
+        .execute(&pool)
+        .await?;
+    Ok(())
+}
+
 pub async fn fetch_decks() -> Result<Vec<Deck>, sqlx::Error> {
     let pool = sqlx::sqlite::SqlitePool::connect("sqlite:data\\flashcard-app-data.db").await?;
     let rows = sqlx::query_as::<_, Deck>("SELECT * FROM deck")

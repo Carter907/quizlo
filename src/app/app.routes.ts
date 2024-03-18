@@ -5,5 +5,5 @@ import {HomeScreenComponent} from "./home-screen/home-screen.component";
 export const routes: Routes = [
 
     { path: '', component: HomeScreenComponent },
-    { path: '/create-new-deck', component: CreateNewDeckComponent }
+    { path: 'create-new-deck', component: CreateNewDeckComponent }
 ];

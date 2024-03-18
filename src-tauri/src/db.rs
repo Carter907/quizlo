@@ -13,6 +13,10 @@ pub async fn get_cards(deck: Deck) -> Vec<Card> {
 }
 
 #[tauri::command]
+pub async fn insert_deck() {
+
+}
+#[tauri::command]
 pub async fn get_decks() -> Vec<Deck> {
     fetch_decks()
         .await
