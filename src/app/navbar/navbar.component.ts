@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {faAdd} from "@fortawesome/free-solid-svg-icons";
+import {faAdd, faHome} from "@fortawesome/free-solid-svg-icons";
 import {FaIconComponent} from "@fortawesome/angular-fontawesome";
 import {RouterLink} from "@angular/router";
 
@@ -17,4 +17,5 @@ export class NavbarComponent {
 
 
     protected readonly faAdd = faAdd;
+    protected readonly faHome = faHome;
 }

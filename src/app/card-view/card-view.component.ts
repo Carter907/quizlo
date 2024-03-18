@@ -14,7 +14,6 @@ export class CardViewComponent {
   @Input()
   card: Card = { id: -1, front: '', back: '', deck_id: -1 }
 
-
   clickCard() {
     this.showBack = ! this.showBack;
   }

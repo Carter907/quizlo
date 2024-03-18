@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {FormControl, FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {Card} from "../card";
+import {invoke} from "@tauri-apps/api/tauri";
 
 @Component({
   selector: 'app-create-new-deck',
@@ -15,12 +16,12 @@ import {Card} from "../card";
 export class CreateNewDeckComponent {
 
   name = new FormControl('');
-  cards: Card[] = []
 
-  onSubmit() {
+  addDeck() {
+    console.log(this.name.value);
+    invoke<string>("add_deck", {deck: { id: -1, name: this.name.value}}).then((message) => {
 
-  }
-  addCard() {
-    this.cards.push()
+      console.log(message)
+    })
   }
 }
