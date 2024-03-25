@@ -1,0 +1,18 @@
+<div class="border rounded w-fit flex flex-col gap-3 p-4">
+    <h1 class="text-center">Add New Card</h1>
+    <div class="flex flex-col">
+
+        <label for="front" class="text-center self-start">Front</label>
+        <input id="front" class="border-2 rounded p-2" type="text" [formControl]="front" placeholder="front of the card">
+
+    </div>
+    <div class="flex flex-col">
+
+
+        <label for="back" class="text-center self-start">Back</label>
+        <input id="back" class="border-2 rounded p-2" type="text" [formControl]="back" placeholder="back of the card">
+    </div>
+    <button type="button" (click)="addCard()" class="shadow-md m-2 bg-neutral-100">
+        Add
+    </button>
+</div>

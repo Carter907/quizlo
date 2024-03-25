@@ -1,9 +1,11 @@
 import { Routes } from "@angular/router";
-import {CreateNewDeckComponent} from "./create-new-deck/create-new-deck.component";
+import {CreateDeckComponent} from "./create-deck/create-deck.component";
 import {HomeScreenComponent} from "./home-screen/home-screen.component";
+import {CreateCardComponent} from "./create-card/create-card.component";
 
 export const routes: Routes = [
 
     { path: '', component: HomeScreenComponent },
-    { path: 'create-new-deck', component: CreateNewDeckComponent }
+    { path: 'create-deck', component: CreateDeckComponent },
+    { path: 'create-card', component: CreateCardComponent }
 ];

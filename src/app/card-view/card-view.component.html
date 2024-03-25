@@ -1,7 +1,9 @@
-<div class="w-1/2 rounded h-20 p-2 border-2 shadow-md select-none" (click)="clickCard()">
-    @if (!showBack) {
-        {{ card.front }}
-    } @else {
-        {{ card.back }}
-    }
+<div class="w-1/2 rounded min-h-32 border-2 select-none" (click)="clickCard()">
+    <p class="p-5 text-center">
+        @if (!showBack) {
+            {{ card.front }}
+        } @else {
+            {{ card.back }}
+        }
+    </p>
 </div>
