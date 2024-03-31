@@ -1,9 +1,8 @@
-<div class="border rounded w-fit flex flex-col gap-3 p-4">
-    <h1>Add New Deck</h1>
-    <div class="flex flex-col">
+<div class="border rounded w-fit p-4">
+    <h1 class="text-center">Add New Deck</h1>
         <label for="name" class="self-start">Name</label>
+    <br/>
         <input id="name" class="border-2 rounded p-2" type="text" [formControl]="name" placeholder="name">
-
-    </div>
-   <button type="button" (click)="addDeck()" class="shadow-md m-2 bg-neutral-100">Add</button>
+    <br/>
+   <button type="button" (click)="addDeck()" class="shadow-md my-2 p-2 bg-neutral-100">Add</button>
 </div>

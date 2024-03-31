@@ -22,16 +22,21 @@ export class HomeScreenComponent implements OnInit {
   selected_deck: Deck = { id: -1, name: 'null' }
   ngOnInit(): void {
     // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-
-    invoke<Deck[]>("get_decks").then((decks) => {
-      this.decks = decks;
-    });
+    this.get_all_decks();
 
   }
   select_deck(deck: Deck) {
     this.selected_deck = deck;
     invoke<Card[]>("get_cards",{ deck: this.selected_deck }).then((cards) => {
       this.cards = cards;
+    });
+  }
+
+  get_all_decks() {
+    console.log('refreshing')
+    invoke<Deck[]>("get_decks").then((decks) => {
+      this.decks = decks;
+
     });
   }
 }

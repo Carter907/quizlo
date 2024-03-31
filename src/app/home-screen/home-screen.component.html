@@ -1,7 +1,7 @@
 <div class="flex flex-row gap-2">
     <div class="w-1/4">
 
-        <app-deck-list-view [decks]="decks" (new_selected_deck)="select_deck($event)" [selected_deck]="selected_deck"/>
+        <app-deck-list-view [decks]="decks" (refresh_deck)="get_all_decks()" (new_selected_deck)="select_deck($event)" [selected_deck]="selected_deck"/>
     </div>
     <div class="w-3/4">
 

@@ -1,18 +1,32 @@
-<div class="border rounded w-fit flex flex-col gap-3 p-4">
+<div class="border rounded w-fit p-4">
     <h1 class="text-center">Add New Card</h1>
-    <div class="flex flex-col">
 
-        <label for="front" class="text-center self-start">Front</label>
-        <input id="front" class="border-2 rounded p-2" type="text" [formControl]="front" placeholder="front of the card">
+    <label for="deck-select">Please choose a Deck:</label>
+    <select id="deck-select" [formControl]="selected_deck" required>
+        <option disabled selected>
+            pick a deck
+        </option>
 
-    </div>
-    <div class="flex flex-col">
+        @for (deck of decks; track deck.id) {
+            <option [ngValue]="deck">
+                {{ deck.name }}
+            </option>
+        }
+    </select>
+    <br/>
+
+    <label for="front" class="text-center self-start">Front</label>
+    <br>
+    <input required id="front" class="border-2 rounded p-2" type="text" [formControl]="front" placeholder="front of the card">
 
 
-        <label for="back" class="text-center self-start">Back</label>
-        <input id="back" class="border-2 rounded p-2" type="text" [formControl]="back" placeholder="back of the card">
-    </div>
-    <button type="button" (click)="addCard()" class="shadow-md m-2 bg-neutral-100">
+    <br/>
+
+    <label for="back" class="text-center self-start">Back</label>
+    <br/>
+    <textarea required id="back" class="border-2 rounded" type="text" [formControl]="back" placeholder="back of the card"></textarea>
+    <br/>
+    <button type="button" (click)="addCard()" class="shadow-md p-2 my-2 bg-neutral-100">
         Add
     </button>
 </div>

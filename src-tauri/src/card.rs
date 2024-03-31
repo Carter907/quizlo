@@ -1,7 +1,7 @@
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 use sqlx::FromRow;
 
-#[derive(FromRow, Debug, Serialize)]
+#[derive(FromRow, Debug, Deserialize, Serialize)]
 pub struct Card {
     pub id: i64,
     pub front: String,
