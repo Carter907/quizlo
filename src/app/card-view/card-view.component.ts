@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, input, Input, OnInit, signal} from '@angular/core';
 import {Card} from "../card";
 
 @Component({
@@ -8,13 +8,18 @@ import {Card} from "../card";
   templateUrl: './card-view.component.html',
   styleUrl: './card-view.component.css'
 })
-export class CardViewComponent {
-
+export class CardViewComponent implements OnInit {
   showBack = false;
-  @Input()
-  card: Card = { id: -1, front: '', back: '', deck_id: -1 }
+  card = input.required<Card>();
+  displayText = '';
+
+  ngOnInit(): void {
+
+    this.displayText = this.card().front
+  }
 
   clickCard() {
     this.showBack = ! this.showBack;
+    this.displayText = this.showBack ? this.card().back : this.card().front
   }
 }

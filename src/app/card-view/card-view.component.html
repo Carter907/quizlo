@@ -1,9 +1,6 @@
 <div class="w-1/2 rounded min-h-32 border-2 select-none" (click)="clickCard()">
+
     <p class="p-5 text-center">
-        @if (!showBack) {
-            {{ card.front }}
-        } @else {
-            {{ card.back }}
-        }
+        {{ displayText }}
     </p>
 </div>
