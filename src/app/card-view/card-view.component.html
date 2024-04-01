@@ -1,4 +1,6 @@
-<div class="w-1/2 rounded min-h-32 border-2 select-none" (click)="clickCard()">
+
+
+<div class="w-full roundedn border-2 my-2 shadow-md" [ngClass]="{'bg-neutral-200': showBack}" (click)="clickCard()">
 
     <p class="p-5 text-center">
         {{ displayText }}

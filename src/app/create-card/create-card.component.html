@@ -1,32 +1,40 @@
-<div class="border rounded w-fit p-4">
-    <h1 class="text-center">Add New Card</h1>
-
-    <label for="deck-select">Please choose a Deck:</label>
-    <select id="deck-select" [formControl]="selected_deck" required>
-        <option disabled selected>
-            pick a deck
-        </option>
-
-        @for (deck of decks; track deck.id) {
-            <option [ngValue]="deck">
-                {{ deck.name }}
+<div class="border rounded w-1/2 m-2">
+    <h1 class="text-center bg-neutral-100 p-2">Add New Card</h1>
+    <div class="p-4">
+        <label for="deck-select" class="opacity-80">Choose a Deck:</label>
+        <select id="deck-select" class="p-2 m-2 rounded border" [formControl]="selected_deck" required>
+            <option disabled selected>
+                pick a deck
             </option>
-        }
-    </select>
-    <br/>
 
-    <label for="front" class="text-center self-start">Front</label>
-    <br>
-    <input required id="front" class="border-2 rounded p-2" type="text" [formControl]="front" placeholder="front of the card">
+            @for (deck of decks; track deck.id) {
+                <option [ngValue]="deck">
+                    {{ deck.name }}
+                </option>
+            }
+        </select>
+        <br/>
+
+        <label for="front" class="text-center self-start opacity-80">Front:</label>
+        <br>
+        <input required id="front" class="border-2 rounded p-2" type="text" [formControl]="front"
+               placeholder="front of the card">
 
 
-    <br/>
+        <br/>
 
-    <label for="back" class="text-center self-start">Back</label>
-    <br/>
-    <textarea required id="back" class="border-2 rounded" type="text" [formControl]="back" placeholder="back of the card"></textarea>
-    <br/>
-    <button type="button" (click)="addCard()" class="shadow-md p-2 my-2 bg-neutral-100">
-        Add
-    </button>
+        <label for="back" class="text-center self-start opacity-80">Back:</label>
+        <br/>
+        <textarea required id="back" class="border-2 rounded p-2" rows=10 cols=40 type="text" [formControl]="back"
+                  placeholder="back of the card"></textarea>
+        <br/>
+    </div>
+    <div class="shadow-md bg-neutral-100 w-1/2 mb-2 p-2 rounded mx-auto text-center m-auto">
+
+        <button type="button" (click)="addCard()" class="w-full h-full">
+            <p>
+                Add
+            </p>
+        </button>
+    </div>
 </div>

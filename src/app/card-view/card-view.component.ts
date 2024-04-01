@@ -1,10 +1,13 @@
 import {Component, input, Input, OnInit, signal} from '@angular/core';
 import {Card} from "../card";
+import {NgClass} from "@angular/common";
 
 @Component({
   selector: 'app-card-view',
   standalone: true,
-  imports: [],
+  imports: [
+    NgClass
+  ],
   templateUrl: './card-view.component.html',
   styleUrl: './card-view.component.css'
 })

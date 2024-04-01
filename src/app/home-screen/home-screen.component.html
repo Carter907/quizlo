@@ -1,9 +1,13 @@
 <div class="flex flex-row gap-2">
-    <div class="w-1/4">
+    <div class="flex flex-col w-1/4">
 
-        <app-deck-list-view [decks]="decks" (refresh_deck)="get_all_decks()" (new_selected_deck)="select_deck($event)" [selected_deck]="selected_deck"/>
+        <h1 class="text-center opacity-80">
+            Decks
+        </h1>
+        <app-deck-list-view [decks]="decks" (refresh_deck)="get_all_decks()" (new_selected_deck)="select_deck($event)"
+                            [selected_deck]="selected_deck"/>
     </div>
-    <div class="w-3/4">
+    <div class="w-full overflow-y-scroll rounded p-2">
 
         <app-card-list-view [cards]="cards"/>
     </div>
