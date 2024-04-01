@@ -1,5 +1,5 @@
 # Quizlo
-Quizlo is a learning simple learning tool for memorization.
+Quizlo is a simple learning tool for memorization.
 
 You can create decks of cards and use them like you would a physical set of flash cards. 
 
