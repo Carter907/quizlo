@@ -22,6 +22,8 @@ export class CreateCardComponent implements OnInit {
     decks: Deck[] = [];
 
     addCard() {
+
+
         if (this.selected_deck.value) {
             invoke<string>("add_card", {
                 card: {
@@ -31,9 +33,9 @@ export class CreateCardComponent implements OnInit {
                     deck_id: this.selected_deck.value.id
                 }
             }).then((message) => {
-
-
-
+                console.log(message)
+                this.front.setValue('');
+                this.back.setValue('');
             });
         }
 

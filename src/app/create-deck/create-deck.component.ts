@@ -21,6 +21,7 @@ export class CreateDeckComponent {
     invoke<string>("add_deck", {deck: { id: -1, name: this.name.value}}).then((message) => {
 
       console.log(message)
+      this.name.setValue('')
     })
   }
 }

@@ -33,10 +33,11 @@ export class HomeScreenComponent implements OnInit {
   }
 
   get_all_decks() {
-    console.log('refreshing')
-    invoke<Deck[]>("get_decks").then((decks) => {
+    invoke<Deck[]>("get_decks").then((decks: Deck[]) => {
       this.decks = decks;
-
+      if (!decks.includes(this.selected_deck)) {
+        this.select_deck({id: -1, name: ''})
+      }
     });
   }
 }

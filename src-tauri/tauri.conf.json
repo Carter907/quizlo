@@ -3,7 +3,8 @@
     "beforeDevCommand": "npm run start",
     "beforeBuildCommand": "npm run build",
     "devPath": "http://localhost:1420",
-    "distDir": "../dist/quizlo/browser"
+    "distDir": "../dist/quizlo/browser",
+    "withGlobalTauri": true
   },
   "package": {
     "productName": "quizlo",
@@ -12,9 +13,9 @@
   "tauri": {
     "allowlist": {
       "all": false,
-      "shell": {
-        "all": false,
-        "open": true
+
+      "fs": {
+        "scope": ["$RESOURCE/data/flashcard-app-data.db"]
       }
     },
     "windows": [
@@ -32,14 +33,19 @@
     "bundle": {
       "active": true,
       "targets": "all",
-      "identifier": "com.tauri.dev",
+      "identifier": "com.speers.carter.quizo",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
         "icons/128x128@2x.png",
         "icons/icon.icns",
         "icons/icon.ico"
+      ],
+      "resources": [
+        "data/flashcard-app-data.db"
       ]
     }
+
+
   }
 }
