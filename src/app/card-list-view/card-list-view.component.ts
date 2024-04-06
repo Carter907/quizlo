@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, input, Input, Output, signal} from '@angular/core';
 import {Card} from "../card";
 import {CardViewComponent} from "../card-view/card-view.component";
 
@@ -16,5 +16,9 @@ export class CardListViewComponent {
   @Input()
   cards: Card[] = []
 
+  removeCard(id: number) {
+
+    this.cards = this.cards.filter((e,_) => e.id !== id)
+  }
 
 }

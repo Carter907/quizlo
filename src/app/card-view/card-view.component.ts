@@ -1,28 +1,38 @@
-import {Component, input, Input, OnInit, signal} from '@angular/core';
+import {Component, EventEmitter, input, Input, OnInit, Output, signal} from '@angular/core';
 import {Card} from "../card";
 import {NgClass} from "@angular/common";
+import {MathJaxParagraphComponent} from "../math-jax-paragraph/math-jax-paragraph.component";
+import {faClose} from "@fortawesome/free-solid-svg-icons";
+import {FaIconComponent} from "@fortawesome/angular-fontawesome";
+import {invoke} from "@tauri-apps/api/tauri";
 
 @Component({
-  selector: 'app-card-view',
-  standalone: true,
-  imports: [
-    NgClass
-  ],
-  templateUrl: './card-view.component.html',
-  styleUrl: './card-view.component.css'
+    selector: 'app-card-view',
+    standalone: true,
+    imports: [
+        NgClass,
+        MathJaxParagraphComponent,
+        FaIconComponent
+    ],
+    templateUrl: './card-view.component.html',
+    styleUrl: './card-view.component.css'
 })
-export class CardViewComponent implements OnInit {
-  showBack = false;
-  card = input.required<Card>();
-  displayText = '';
+export class CardViewComponent {
+    showBack = false;
+    card = input.required<Card>();
+    @Output()
+    remove = new EventEmitter<boolean>(false);
 
-  ngOnInit(): void {
+    clickCard() {
+        this.showBack = !this.showBack;
+    }
 
-    this.displayText = this.card().front
-  }
+    protected readonly faClose = faClose;
 
-  clickCard() {
-    this.showBack = ! this.showBack;
-    this.displayText = this.showBack ? this.card().back : this.card().front
-  }
+    removeCard() {
+        invoke("remove_card", { card: this.card() }).then((message) => {
+            console.log(message)
+            this.remove.emit(true)
+        });
+    }
 }

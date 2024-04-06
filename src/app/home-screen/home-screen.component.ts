@@ -4,14 +4,16 @@ import {Deck} from "../deck";
 import {invoke} from "@tauri-apps/api/tauri";
 import {CardListViewComponent} from "../card-list-view/card-list-view.component";
 import {DeckListViewComponent} from "../deck-list-view/deck-list-view.component";
+import {MathJaxParagraphComponent} from "../math-jax-paragraph/math-jax-paragraph.component";
 
 @Component({
   selector: 'app-home-screen',
   standalone: true,
-  imports: [
-    CardListViewComponent,
-    DeckListViewComponent
-  ],
+    imports: [
+        CardListViewComponent,
+        DeckListViewComponent,
+        MathJaxParagraphComponent
+    ],
   templateUrl: './home-screen.component.html',
   styleUrl: './home-screen.component.css'
 })

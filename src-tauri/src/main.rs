@@ -9,7 +9,7 @@ mod deck;
 
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![get_cards, get_decks, add_deck, add_card, remove_deck])
+        .invoke_handler(tauri::generate_handler![get_cards, get_decks, add_deck, add_card, remove_deck, remove_card])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

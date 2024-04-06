@@ -40,6 +40,15 @@ pub async fn delete_deck(deck: Deck) -> Result<String, sqlx::Error> {
         .await?;
     Ok("deletion of deck and associated cards successful".to_string())
 }
+pub async fn delete_card(card: Card) -> Result<String, sqlx::Error> {
+
+    let pool = sqlx::sqlite::SqlitePool::connect("sqlite:data\\flashcard-app-data.db").await?;
+    sqlx::query("DELETE FROM card WHERE id=($1)")
+        .bind(card.id)
+        .execute(&pool)
+        .await?;
+    Ok("deletion successful".to_string())
+}
 
 
 pub async fn insert_card(card: Card) -> Result<String, sqlx::Error> {

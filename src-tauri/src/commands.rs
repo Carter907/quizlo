@@ -1,6 +1,6 @@
 use sqlx::AnyConnection;
 use crate::card::Card;
-use crate::commands::sqlite::{delete_deck, fetch_cards, fetch_decks, insert_card, insert_deck};
+use crate::commands::sqlite::{delete_card, delete_deck, fetch_cards, fetch_decks, insert_card, insert_deck};
 use crate::deck::Deck;
 
 mod sqlite;
@@ -28,6 +28,12 @@ pub async fn get_decks() -> Vec<Deck> {
 #[tauri::command]
 pub async fn remove_deck(deck: Deck) -> String {
     delete_deck(deck)
+        .await
+        .unwrap()
+}
+#[tauri::command]
+pub async fn remove_card(card: Card) -> String {
+    delete_card(card)
         .await
         .unwrap()
 }

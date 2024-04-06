@@ -1,8 +1,17 @@
+<div class="w-full h-fit roundedn border-2 my-2 shadow-md flex flex-col p-2" [ngClass]="{'bg-neutral-200': showBack}"
+     (click)="clickCard()">
+    @if (showBack) {
 
+        <p class="p-5 text-center text-2xl">
+            <app-math-jax-paragraph [mathString]="card().back"></app-math-jax-paragraph>
+        </p>
+    } @else {
 
-<div class="w-full roundedn border-2 my-2 shadow-md" [ngClass]="{'bg-neutral-200': showBack}" (click)="clickCard()">
+        <p class="p-5 text-center text-2xl">
+            <app-math-jax-paragraph [mathString]="card().front"></app-math-jax-paragraph>
 
-    <p class="p-5 text-center">
-        {{ displayText }}
-    </p>
+        </p>
+        <fa-icon (click)="removeCard()" [icon]="faClose" class="self-end opacity-50 hover:opacity-100"/>
+    }
+
 </div>
