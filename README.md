@@ -1,7 +1,6 @@
-# Tauri + Angular + Tailwindcss + Font-Awesome
+# Quizlo
+Quizlo is a simple learning tool for memorization.
 
-This template should help get you started developing with Tauri and Angular.
+You can create decks of cards and use them like you would a physical set of flash cards. 
 
-## Recommended IDE Setup
-
-[VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) + [Angular Language Service](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template).
+![image](https://github.com/Carter907/quizlo/assets/102479896/b07cd426-9a90-4825-bd29-b1db1471628d)
