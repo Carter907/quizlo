@@ -55,7 +55,7 @@ cargo install tauri-cli
 Clone the repository and run the following commands:
 
 ```bash
-git clone https://github.com/<your-repo>/quizlo.git
+git clone https://github.com/Carter907/quizlo/quizlo.git
 cd quizlo
 npm install
 cargo tauri dev
